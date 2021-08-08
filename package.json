@@ -33,7 +33,8 @@
     "eject": "react-scripts eject",
     "lint": "eslint './src/**/*.{tsx,ts}'",
     "lint:fix": "eslint './src/**/*.{tsx,ts}' --fix",
-    "format": "prettier --write src/"
+    "format": "prettier --check src/",
+    "format:fix": "prettier --write src/"
   },
   "browserslist": {
     "production": [
