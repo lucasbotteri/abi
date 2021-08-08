@@ -11,8 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install packages
-        yarn install
+        run: yarn install
       - name: Formatter
-        yarn format
+        run: yarn format
       - name: Lint
-        yarn lint
+        run: yarn lint
