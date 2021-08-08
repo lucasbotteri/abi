@@ -4,6 +4,21 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `yarn formatter`
+
+Formats all files supported by Prettier in the src folder.
+
+### `yarn linter`
+
+Runs linter that will statically analyzes code inside .tsx and .ts files to find problems according on our current rules. Currenty using
+
+```
+"react-app"
+"eslint:recommended", // recommended ESLint rules
+"plugin:@typescript-eslint/recommended", // recommended rules from @typescript-eslint/eslint-plugin
+"plugin:prettier/recommended" // Enables eslint-plugin-prettier and eslint-config-prettier. This will display Prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
+```
+
 ### `yarn start`
 
 Runs the app in the development mode.<br />
