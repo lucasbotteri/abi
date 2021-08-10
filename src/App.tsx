@@ -1,17 +1,14 @@
-import { Button } from "antd";
 import { Switch, Route } from "react-router-dom";
-import "./App.css";
+import { Layout } from "./components";
 
-function App() {
-  return (
+const App = () => (
+  <Layout>
     <Switch>
       <Route path="/">
-        <div className="App">
-          <Button>Hola</Button>
-        </div>
+        <div>App Content</div>
       </Route>
     </Switch>
-  );
-}
+  </Layout>
+);
 
 export default App;
