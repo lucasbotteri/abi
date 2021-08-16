@@ -1,4 +1,5 @@
 const CracoAntDesignPlugin = require("craco-antd");
+const CracoAlias = require("craco-alias");
 
 module.exports = {
   plugins: [
@@ -11,6 +12,14 @@ module.exports = {
             "@link-color": "#1DA57A",
           },
         },
+      },
+    },
+    {
+      plugin: CracoAlias,
+      options: {
+        source: "tsconfig",
+        baseUrl: "./src",
+        tsConfigPath: "./tsconfig.alias.json",
       },
     },
   ],

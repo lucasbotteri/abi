@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { Layout as AntdLayout, Row, Col } from "antd";
-import { NavBar } from "..";
+import { NavBar } from "@component";
 import "./Layout.less";
 
 interface Props {

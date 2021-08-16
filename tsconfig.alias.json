@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@component": ["./component/index.ts"],
+      "@client": ["./client/index.ts"]
+    }
+  }
+}

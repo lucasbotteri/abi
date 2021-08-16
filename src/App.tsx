@@ -1,5 +1,5 @@
 import { Switch, Route } from "react-router-dom";
-import { Layout } from "./component";
+import { Layout } from "@component";
 
 const App = () => (
   <Layout>
