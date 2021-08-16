@@ -1,6 +1,8 @@
-import { Menu } from "antd";
+import { Menu, Typography } from "antd";
 import { Link } from "react-router-dom";
 import "./NavBar.less";
+
+const { Link: AntdLink } = Typography;
 
 const NavBar = () => (
   <div className="navBar">
@@ -12,9 +14,12 @@ const NavBar = () => (
         <Link to="/imprimir">Imprimi tu archivo!</Link>
       </Menu.Item>
       <Menu.Item>
-        <a href="https://www.instagram.com/ctrlc.fotocopias/" target="blank">
+        <AntdLink
+          href="https://www.instagram.com/ctrlc.fotocopias/"
+          target="blank"
+        >
           Seguinos en instagram
-        </a>
+        </AntdLink>
       </Menu.Item>
     </Menu>
   </div>

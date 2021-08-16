@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { Layout as AntdLayout, Row, Col } from "antd";
-import { NavBar } from "@component";
+import { NavBar, Footer } from "@component";
 import "./Layout.less";
 
 interface Props {
@@ -23,7 +23,9 @@ const Layout = ({ children }: Props) => (
         </Col>
       </Row>
     </AntdLayout.Content>
-    <AntdLayout.Footer>Footer</AntdLayout.Footer>
+    <AntdLayout.Footer className="layout__footer">
+      <Footer />
+    </AntdLayout.Footer>
   </AntdLayout>
 );
 
