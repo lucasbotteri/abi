@@ -11,8 +11,8 @@ const Layout = ({ children }: Props) => (
     <AntdLayout.Header className="layout__header">
       <NavBar />
     </AntdLayout.Header>
-    <AntdLayout.Content className="layout__content">
-      <Row>
+    <AntdLayout.Content className="layout__contentWrapper">
+      <Row className="layout__content">
         <Col
           xs={{ span: 24 }}
           sm={{ span: 22, offset: 1 }}

@@ -5,9 +5,9 @@ const { Text, Link } = Typography;
 
 const Footer = () => (
   <div className="footer">
-    <div className="foooter__socialMedia">
+    <div className="footer__socialMedia">
       <Link
-        className="foooter__socialMediaIcon"
+        className="footer__socialMediaIcon"
         href="https://www.facebook.com/ctrlc.fotocopias/"
       >
         <svg
@@ -20,7 +20,7 @@ const Footer = () => (
         </svg>
       </Link>
       <Link
-        className="foooter__socialMediaIcon"
+        className="footer__socialMediaIcon"
         href="https://www.instagram.com/ctrlc.fotocopias/"
       >
         <svg
@@ -35,7 +35,7 @@ const Footer = () => (
         </svg>
       </Link>
       <Link
-        className="foooter__socialMediaIcon"
+        className="footer__socialMediaIcon"
         href="https://wa.me/5492216550324?text=Hola%20tengo%20consultas%20sobre%20la%20impresion%20de%20fotocopias"
       >
         <svg
