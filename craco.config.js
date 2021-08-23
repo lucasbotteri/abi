@@ -8,6 +8,8 @@ module.exports = {
       options: {
         customizeTheme: {
           "@layout-footer-background": "#c6d166",
+          "@layout-header-background": "#0f1b07",
+          "@primary-color": "#0f1b07",
         },
       },
     },
