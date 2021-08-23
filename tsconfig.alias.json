@@ -4,7 +4,8 @@
     "paths": {
       "@component": ["./component/index.ts"],
       "@client": ["./client/index.ts"],
-      "@hook": ["./app/hooks.ts"]
+      "@hook": ["./app/hooks.ts"],
+      "@screen": ["./screen/index.ts"]
     }
   }
 }

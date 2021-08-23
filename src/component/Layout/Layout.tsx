@@ -12,7 +12,7 @@ const Layout = ({ children }: Props) => (
       <NavBar />
     </AntdLayout.Header>
     <AntdLayout.Content className="layout__contentWrapper">
-      <Row className="layout__content">
+      <Row className="layout__content" align="middle">
         <Col
           xs={{ span: 24 }}
           sm={{ span: 22, offset: 1 }}
