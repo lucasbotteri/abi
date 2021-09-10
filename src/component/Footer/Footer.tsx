@@ -11,6 +11,7 @@ const Footer = () => (
         href="https://www.facebook.com/ctrlc.fotocopias/"
       >
         <svg
+          fill="#f3ca20"
           width="24"
           height="24"
           viewBox="0 0 24 24"
@@ -25,6 +26,7 @@ const Footer = () => (
       >
         <svg
           viewBox="0 0 511 511.9"
+          fill="#f3ca20"
           width="24"
           height="24"
           xmlns="http://www.w3.org/2000/svg"
@@ -40,6 +42,7 @@ const Footer = () => (
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
+          fill="#f3ca20"
           width="24"
           height="24"
           viewBox="0 0 24 24"

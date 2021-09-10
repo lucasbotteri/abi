@@ -13,14 +13,7 @@ const Layout = ({ children }: Props) => (
     </AntdLayout.Header>
     <AntdLayout.Content className="layout__contentWrapper">
       <Row className="layout__content" align="middle">
-        <Col
-          xs={{ span: 24 }}
-          sm={{ span: 22, offset: 1 }}
-          lg={{ span: 20, offset: 2 }}
-          xxl={{ span: 16, offset: 4 }}
-        >
-          {children}
-        </Col>
+        <Col>{children}</Col>
       </Row>
     </AntdLayout.Content>
     <AntdLayout.Footer className="layout__footer">

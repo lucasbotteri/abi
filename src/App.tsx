@@ -1,12 +1,16 @@
 import { Switch, Route } from "react-router-dom";
 import { Layout } from "@component";
-import { Landing } from "@screen";
+import { Landing, PrintRequest } from "@screen";
+import { routePath } from "@constant";
 
 const App = () => (
   <Layout>
     <Switch>
-      <Route path="/">
+      <Route path={routePath.HOME} exact>
         <Landing />
+      </Route>
+      <Route path={routePath.PRINT_REQUEST} exact>
+        <PrintRequest />
       </Route>
     </Switch>
   </Layout>

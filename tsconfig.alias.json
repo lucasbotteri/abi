@@ -5,7 +5,9 @@
       "@component": ["./component/index.ts"],
       "@client": ["./client/index.ts"],
       "@hook": ["./app/hooks.ts"],
-      "@screen": ["./screen/index.ts"]
+      "@screen": ["./screen/index.ts"],
+      "@constant": ["./constant/index.ts"],
+      "@feature": ["./feature/index.ts"]
     }
   }
 }

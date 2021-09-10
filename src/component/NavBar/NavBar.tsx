@@ -1,6 +1,7 @@
 import { Menu, Typography } from "antd";
 import { Link } from "react-router-dom";
 import { useWindowSize } from "@hook";
+import { routePath } from "@constant";
 import "./NavBar.less";
 
 const { Link: AntdLink } = Typography;
@@ -20,7 +21,7 @@ const NavBar = () => {
       {showMenu && (
         <Menu theme="dark" mode="horizontal" selectable={false}>
           <Menu.Item>
-            <Link to="/imprimir">Imprimi tu archivo!</Link>
+            <Link to={routePath.PRINT_REQUEST}>Imprimi tu archivo!</Link>
           </Menu.Item>
           <Menu.Item>
             <AntdLink

@@ -37,3 +37,22 @@ export const useWindowSize = () => {
   }, []); // Empty array ensures that effect is only run on mount
   return windowSize;
 };
+
+/*
+const useGetFilePages = (file: UploadFile) => {
+  const [filePages, setFilePages] = useState<number>();
+  if (file.originFileObj) {
+    const reader = new FileReader();
+    reader.readAsBinaryString(file.originFileObj);
+    reader.onloadend = () => {
+      const readerResult = reader.result;
+      if (typeof readerResult === "string") {
+        const pageCount = readerResult.match(/\/Type[\s]*\/Page[^s]/g)?.length;
+        setFilePages(pageCount);
+      }
+    };
+  }
+
+  return filePages;
+}; 
+*/
