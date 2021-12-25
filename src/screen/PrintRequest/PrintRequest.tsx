@@ -1,4 +1,4 @@
-import { Form, Input, Button, Upload } from "antd";
+import { Form, Input, Button, Upload, Modal, message } from "antd";
 import { InboxOutlined } from "@ant-design/icons";
 import { FileUploadItem } from "@component";
 import "./PrintRequest.less";
@@ -11,37 +11,53 @@ import { FormFile, mapAntFilesToFormFiles } from "@util";
 
 const { Dragger } = Upload;
 const { TextArea } = Input;
+const { confirm } = Modal;
 
 const UPLOAD_LIST_OPTIONS: ShowUploadListInterface = {
   showPreviewIcon: true,
   showDownloadIcon: false,
 };
-
+interface PrintRequestForm {
+  name: string;
+  phoneNumber: string;
+  address: string;
+  observations: string;
+}
 const PrintRequest = () => {
-  const [form] = Form.useForm();
+  const [form] = Form.useForm<PrintRequestForm>();
   const [files, setFiles] = useState<FormFile[]>([]);
 
   const onDraggerChanged = async (info: UploadChangeParam) => {
     const mappedFiles = await mapAntFilesToFormFiles(info.fileList);
     setFiles(mappedFiles);
   };
-
   const updateFile = (fileUpdated: FormFile) => {
     setFiles(
       files.map((file) => (file.id === fileUpdated.id ? fileUpdated : file))
     );
   };
 
+  const showConfirmUpload = (printRequestValues: PrintRequestForm) => {
+    confirm({
+      title: "Confirmar Pedido de impresion",
+      okText: "Aceptar",
+      cancelText: "Cancelar",
+      onOk: () => {
+        console.log(printRequestValues);
+      },
+    });
+  };
+
+  const showInvalidUpload = () => {
+    message.error("Camplos invalidos o faltantes");
+  };
+
   return (
     <Form
       form={form}
       layout="vertical"
-      onFinish={() => {
-        console.log("hola");
-      }}
-      onFinishFailed={() => {
-        console.log("hola failed");
-      }}
+      onFinish={showConfirmUpload}
+      onFinishFailed={showInvalidUpload}
     >
       <Form.Item
         label="Nombre"
@@ -53,7 +69,7 @@ const PrintRequest = () => {
 
       <Form.Item
         label="Telefono"
-        name="password"
+        name="phoneNumber"
         rules={[{ required: true, message: "Por favor ingrese su telefono!" }]}
       >
         <Input />
