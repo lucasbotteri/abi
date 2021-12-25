@@ -7,7 +7,8 @@
       "@hook": ["./app/hooks.ts"],
       "@screen": ["./screen/index.ts"],
       "@constant": ["./constant/index.ts"],
-      "@feature": ["./feature/index.ts"]
+      "@feature": ["./feature/index.ts"],
+      "@util": ["./util/index.ts"]
     }
   }
 }
