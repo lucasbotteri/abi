@@ -10,6 +10,7 @@ import {
 import { FormFile, mapAntFilesToFormFiles } from "@util";
 import { createPrintRequest, PrintRequestEntity } from "@service";
 import { useHistory } from "react-router-dom";
+import { routePath } from "@constant";
 
 const { Dragger } = Upload;
 const { TextArea } = Input;
@@ -43,7 +44,7 @@ const PrintRequest = () => {
     try {
       await createPrintRequest(fileRequestEntity, files);
       message.success("Pedido de impresion realizado!");
-      history.push("/");
+      history.push(routePath.HOME);
     } catch (e) {
       message.error(
         "Algo salio mal! intentalo nuevamente o comunicate conmigo"

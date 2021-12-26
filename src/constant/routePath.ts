@@ -1,2 +1,6 @@
-export const HOME = "/";
-export const PRINT_REQUEST = "/print-request";
+export default {
+  HOME: "/",
+  PRINT_REQUEST: "/print-request",
+  ADMIN_LOGIN: "/admin/login",
+  ADMIN_HOME: "/admin/",
+};

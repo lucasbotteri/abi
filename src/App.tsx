@@ -1,6 +1,6 @@
 import { Switch, Route } from "react-router-dom";
 import { Layout } from "@component";
-import { Landing, PrintRequest } from "@screen";
+import { Landing, PrintRequest, Login } from "@screen";
 import { routePath } from "@constant";
 
 const App = () => (
@@ -11,6 +11,9 @@ const App = () => (
       </Route>
       <Route path={routePath.PRINT_REQUEST} exact>
         <PrintRequest />
+      </Route>
+      <Route path={routePath.ADMIN_LOGIN} exact>
+        <Login />
       </Route>
     </Switch>
   </Layout>
