@@ -3,11 +3,11 @@
     "baseUrl": "./src",
     "paths": {
       "@component": ["./component/index.ts"],
-      "@client": ["./client/index.ts"],
       "@hook": ["./app/hooks.ts"],
       "@screen": ["./screen/index.ts"],
       "@constant": ["./constant/index.ts"],
       "@feature": ["./feature/index.ts"],
+      "@service": ["./service/index.ts"],
       "@util": ["./util/index.ts"]
     }
   }

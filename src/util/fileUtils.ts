@@ -8,7 +8,7 @@ export const isSideType = (value: string): value is SideType =>
 export type FormFile = {
   id: string;
   name: string;
-  uploadFile: UploadFile;
+  fileObject: File;
   pages?: number;
   ringed: boolean;
   sideType: SideType;
@@ -47,10 +47,15 @@ export const mapAntFileToFormFile = async (
   file: UploadFile
 ): Promise<FormFile> => {
   const pages = await getFilePages(file);
+  const fileObject = file.originFileObj;
+  if (!fileObject) {
+    throw new Error("Error with file");
+  }
+
   return {
     id: file.uid,
     name: file.originFileObj?.name ?? "",
-    uploadFile: file,
+    fileObject,
     pages,
     ringed: false,
     sideType: "singleSided",

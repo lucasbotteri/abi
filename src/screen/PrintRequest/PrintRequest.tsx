@@ -8,6 +8,8 @@ import {
   UploadChangeParam,
 } from "antd/lib/upload/interface";
 import { FormFile, mapAntFilesToFormFiles } from "@util";
+import { createPrintRequest, PrintRequestEntity } from "@service";
+import { useHistory } from "react-router-dom";
 
 const { Dragger } = Upload;
 const { TextArea } = Input;
@@ -17,15 +19,14 @@ const UPLOAD_LIST_OPTIONS: ShowUploadListInterface = {
   showPreviewIcon: true,
   showDownloadIcon: false,
 };
-interface PrintRequestForm {
-  name: string;
-  phoneNumber: string;
-  address: string;
-  observations: string;
-}
+// TODO move this delcaration to a better place
+type PrintRequestForm = PrintRequestEntity & {
+  upload: File[];
+};
 const PrintRequest = () => {
   const [form] = Form.useForm<PrintRequestForm>();
   const [files, setFiles] = useState<FormFile[]>([]);
+  const history = useHistory();
 
   const onDraggerChanged = async (info: UploadChangeParam) => {
     const mappedFiles = await mapAntFilesToFormFiles(info.fileList);
@@ -37,14 +38,25 @@ const PrintRequest = () => {
     );
   };
 
+  const uploadPrintRequest = async (printRequestValues: PrintRequestForm) => {
+    const { upload, ...fileRequestEntity } = printRequestValues;
+    try {
+      await createPrintRequest(fileRequestEntity, files);
+      message.success("Pedido de impresion realizado!");
+      history.push("/");
+    } catch (e) {
+      message.error(
+        "Algo salio mal! intentalo nuevamente o comunicate conmigo"
+      );
+    }
+  };
+
   const showConfirmUpload = (printRequestValues: PrintRequestForm) => {
     confirm({
       title: "Confirmar Pedido de impresion",
       okText: "Aceptar",
       cancelText: "Cancelar",
-      onOk: () => {
-        console.log(printRequestValues);
-      },
+      onOk: () => uploadPrintRequest(printRequestValues),
     });
   };
 
@@ -104,6 +116,7 @@ const PrintRequest = () => {
       >
         <Dragger
           name="file"
+          beforeUpload={() => false}
           showUploadList={UPLOAD_LIST_OPTIONS}
           onChange={onDraggerChanged}
         >
