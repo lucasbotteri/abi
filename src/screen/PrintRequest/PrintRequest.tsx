@@ -101,7 +101,7 @@ const PrintRequest = () => {
       </Form.Item>
 
       {files.map((file) => (
-        <Form.Item id={file.id}>
+        <Form.Item key={file.id}>
           <FileUploadItem
             file={file}
             onRingedChanged={(ringed) => updateFile({ ...file, ringed })}

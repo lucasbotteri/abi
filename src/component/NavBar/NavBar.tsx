@@ -20,10 +20,10 @@ const NavBar = () => {
       </div>
       {showMenu && (
         <Menu theme="dark" mode="horizontal" selectable={false}>
-          <Menu.Item id="print_file">
+          <Menu.Item key="print_file">
             <Link to={routePath.PRINT_REQUEST}>Imprimi tu archivo!</Link>
           </Menu.Item>
-          <Menu.Item id="follow_instagram">
+          <Menu.Item key="follow_instagram">
             <AntdLink
               href="https://www.instagram.com/ctrlc.fotocopias/"
               target="blank"

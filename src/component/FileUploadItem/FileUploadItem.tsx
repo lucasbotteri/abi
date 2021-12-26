@@ -52,7 +52,7 @@ const FileUploadItem = ({
             }}
           >
             {SELECT_OPTIONS.map((option) => (
-              <Option id={option.value} value={option.value}>
+              <Option key={option.value} value={option.value}>
                 {option.label}
               </Option>
             ))}
