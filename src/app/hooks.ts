@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-import type { RootState, AppDispatch } from "./store";
+import { firebaseAuth } from "app/firebase";
+import { User } from "firebase/auth";
+import { RootState, AppDispatch } from "./store";
 
 // Use throughout your app instead of plain `useDispatch` and `useSelector`
 export const useAppDispatch = () => useDispatch<AppDispatch>();
@@ -37,3 +39,26 @@ export const useWindowSize = () => {
   }, []); // Empty array ensures that effect is only run on mount
   return windowSize;
 };
+
+export interface AuthState {
+  user: User | null;
+  pending: boolean;
+  isLoggedIn: boolean;
+}
+
+export function useAuth(): AuthState {
+  const [authState, setAuthState] = useState<AuthState>({
+    isLoggedIn: false,
+    pending: true,
+    user: null,
+  });
+
+  useEffect(() => {
+    const unregisterAuthObserver = firebaseAuth.onAuthStateChanged((user) =>
+      setAuthState({ user, pending: false, isLoggedIn: !!user })
+    );
+    return () => unregisterAuthObserver();
+  }, []);
+
+  return authState;
+}

@@ -15,7 +15,7 @@ const Landing = () => {
       </Paragraph>
       <Button
         type="primary"
-        onClick={() => history.push(routePath.PRINT_REQUEST)}
+        onClick={() => history.push(routePath.PRINT_REQUEST_CREATION)}
       >
         Imprimi tu archivo
       </Button>

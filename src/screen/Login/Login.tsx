@@ -6,17 +6,19 @@ import { routePath } from "@constant";
 
 const uiConfig = {
   signInFlow: "popup",
-  signInSuccessUrl: routePath.ADMIN_HOME,
+  signInSuccessUrl: routePath.ADMIN.ROOT,
   signInOptions: [GoogleAuthProvider.PROVIDER_ID],
 };
 
 const { Title } = Typography;
 
-const Login = () => (
-  <>
-    <Title>Por favor logueate para ingresar</Title>
-    <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebaseAuth} />
-  </>
-);
+const Login = () => {
+  return (
+    <>
+      <Title>Por favor logueate para ingresar</Title>
+      <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebaseAuth} />
+    </>
+  );
+};
 
 export default Login;

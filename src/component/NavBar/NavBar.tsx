@@ -21,7 +21,9 @@ const NavBar = () => {
       {showMenu && (
         <Menu theme="dark" mode="horizontal" selectable={false}>
           <Menu.Item key="print_file">
-            <Link to={routePath.PRINT_REQUEST}>Imprimi tu archivo!</Link>
+            <Link to={routePath.PRINT_REQUEST_CREATION}>
+              Imprimi tu archivo!
+            </Link>
           </Menu.Item>
           <Menu.Item key="follow_instagram">
             <AntdLink

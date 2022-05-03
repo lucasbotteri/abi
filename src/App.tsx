@@ -1,5 +1,5 @@
 import { Switch, Route } from "react-router-dom";
-import { Layout } from "@component";
+import { Layout, PrivateRoute } from "@component";
 import { Landing, PrintRequest, Login, Admin } from "@screen";
 import { routePath } from "@constant";
 
@@ -9,14 +9,18 @@ const App = () => (
       <Route path={routePath.HOME} exact>
         <Landing />
       </Route>
-      <Route path={routePath.PRINT_REQUEST} exact>
+      <Route path={routePath.PRINT_REQUEST_CREATION} exact>
         <PrintRequest />
       </Route>
-      <Route path={routePath.ADMIN_LOGIN} exact>
-        <Login />
-      </Route>
-      <Route path={routePath.ADMIN_HOME} exact>
+
+      <PrivateRoute exact path={routePath.ADMIN.PRINT_REQUEST_DETAILS}>
+        <></>
+      </PrivateRoute>
+      <PrivateRoute exact path={routePath.ADMIN.ROOT}>
         <Admin />
+      </PrivateRoute>
+      <Route exact path={routePath.ADMIN.LOGIN}>
+        <Login />
       </Route>
     </Switch>
   </Layout>
